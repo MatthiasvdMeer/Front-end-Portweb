@@ -10,14 +10,20 @@
 <body>
     <nav id="nav">
         <section class="profile-container">
-            <img src="img/" alt="Profiel">
+            <img src="img/IMG-20240801-WA0255.jpg" alt="Profiel">
             <span>Matthias van der Meer</span>
         </section>
-        <div class="dropdown-toggle" onclick="toggleDropdown()">Menu</div>
+        <section class="dropdown-toggle" onclick="toggleDropdown()">Menu</section>
         <ul>
-            <li><a href="#contact">Contact</a></li>
+            <article>
             <li><a href="#projects">Projects</a></li>
+            </article>
+            <article>
             <li><a href="#extra">Extra</a></li>
+            </article>
+            <article>
+            <li><a href="#contact">Contact</a></li>
+            </article>
         </ul>
     </nav>
 
@@ -31,20 +37,20 @@
 <main>
     <section class="projecten">
         <h2>Mijn Projecten</h2>
-        <div class="projects" id="projects">
+        <section class="projects" id="projects">
             <a href="#"><img src="img/istockphoto-1324356458-612x612.jpg" alt="Project 1"></a>
             <a href="#"><img src="img/istockphoto-1324356458-612x612.jpg" alt="Project 2"></a>
             <a href="#"><img src="img/istockphoto-1324356458-612x612.jpg" alt="Project 3"></a>
-        </div>
-    </section>
-
-      <section class="contact" id="contact">
-        <h2>Contact</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+        </section>
     </section>
 
     <section class="extra" id="extra">
         <h2>Extra Items</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2>Contact</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
     </section>
 </main>

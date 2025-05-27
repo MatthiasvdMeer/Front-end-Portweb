@@ -1,0 +1,273 @@
+@use 'colors.scss';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 25px;
+}
+body {
+    font-family: Arial, sans-serif;
+    
+}
+
+.container {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+    
+}
+nav {
+@include colors.nav;
+}
+
+.dropdown-toggle {
+    display: none;
+    cursor: pointer;
+    background: lightgray;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    color: black;
+}
+.dropdown-menu {
+    display: none; /* Hide dropdown menu by default */
+    flex-direction: column;
+    position: absolute;
+    right: 15px;
+    top: 100%;
+    background: teal;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 10;
+}
+.dropdown-menu li a {
+    text-decoration: none;
+    color: white;
+    padding: 8px;
+    display: block;
+}
+nav:hover .dropdown-menu {
+    display: flex;
+    
+}
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+    margin: 0; /* Prevent margin issues */
+}
+nav ul li a {
+    text-decoration: none;
+    background: lightgray;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    color: black;
+}
+nav a{
+    margin-right: 50px;
+}
+nav span{
+    font-weight: bold;
+    font-size: 1.5em;
+}
+.profile-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.profile-container img {
+    width: 100px;
+    border-radius: 50%;
+}
+header {
+    position: relative;
+    text-align: center;
+    padding: 50px;
+    background-image: url(https://images.squarespace-cdn.com/content/v1/61c4da8eb1b30a201b9669f2/e2e0e62f-0064-4f86-b9d8-5a55cb7110ca/Korembi-January-2024.jpg?format=1000w);
+    background-attachment: scroll;
+    height: 55vw;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+.over-mij {
+    max-width: 50%;
+    height: auto;
+    position: relative;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: teal;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 1.5em;
+}
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    background: #f0f0f0;
+    width: 100%;
+}
+.sidebar, .projecten, .extra {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    background: teal;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+.projecten {
+    text-align: center;
+    font-size: 1.5em;
+}
+.projects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+}
+.projects img {
+    width: 20%;
+    height: auto;
+    background: white;
+    border-radius: 5px;
+}
+.extra {
+    width: 100%;
+    background: teal;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 1.5em;
+}
+footer {
+    text-align: center;
+    background: teal;
+    color: white;
+    padding: 15px;
+    font-size: 1.2em;
+}
+footer a {
+    text-decoration: none;
+    background: lightgray;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    color: black;
+}
+
+/* Media query for screens smaller than 768px (phones and small tablets) */
+@media (max-width: 900px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        display: none; /* Initially hide the dropdown */
+    }
+    nav ul.show {
+        display: flex; /* Show dropdown when active */
+        flex-direction: column;
+        position: absolute; /* Ensure dropdown doesn't affect navbar layout */
+        right: 15px; /* Align with dropdown toggle */
+        top: 100%; /* Position below the toggle */
+        background: teal;
+        padding: 10px;
+        border-radius: 5px;
+        z-index: 10; /* Ensure dropdown is above other elements */
+    }
+    .dropdown-menu {
+        display: flex; /* Enable dropdown menu for smaller screens */
+        flex-direction: column;
+        
+    }
+    .dropdown-toggle {
+        display: flex;
+        cursor: pointer;
+        background: lightgray;
+        padding: 10px;
+        border-radius: 5px;
+        font-weight: bold;
+        color: black;
+        margin-bottom: 10px;
+        margin-left: auto; /* Push dropdown to the right */
+        position: absolute; /* Position dropdown independently */
+        right: 15px; /* Align with nav padding */
+        top: 50%; /* Center vertically */
+
+    }
+    .dropdown-toggle.active {
+        background: darkgray; /* Highlight when active */
+    }
+    .profile-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+    .profile-container img {
+        width: 80px;
+    }
+    header {
+        height: auto;
+        padding: 20px;
+    }
+    .over-mij {
+        max-width: 90%;
+        font-size: 1.2em;
+        padding: 15px;
+        margin-top: 60px; /* Add margin to prevent overlap with navbar */
+    }
+    main {
+        display: flex; /* Gebruik flexbox */
+        flex-direction: column; /* Zet de items onder elkaar */
+        align-items: center; /* Centreer de items horizontaal */
+        gap: 20px; /* Voeg ruimte tussen de items toe */
+    }
+    .sidebar {
+        font-size: 1.2em;
+        width: 100%;
+    }
+    .projecten{
+        text-align: center;
+        background-color: teal;
+        color: white;
+        border-radius: 10px;
+        width: 40%;
+    }
+    .projects {
+        flex-direction: column; /* Zorg dat de items onder elkaar staan */
+        align-items: center;
+        gap: 15px;
+        width: 90%; /* Gebruik de volledige breedte */
+    }
+    .projects img {
+        width: 90%; /* Zorg dat de afbeeldingen responsief zijn */
+        height: auto; /* Behoud de aspectratio */
+    }
+}
+    .extra {
+        font-size: 1.2em;
+        width: 90%;
+    }
+    footer {
+        font-size: 1em;
+        padding: 10px;
+
+}
+
+.projecten, .extra, .sidebar {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
